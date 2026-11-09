@@ -45,6 +45,15 @@ Pokemon-OCR-FE/
 
 ## Setup & Running
 
+### 0. Generate the platform folders (first time only)
+This repo only contains `lib/` and `pubspec.yaml`. Create the Android/iOS projects
+(existing files in `lib/` are kept):
+```bash
+flutter create --platforms=android,ios --project-name pokemon_ocr_fe --org com.pokemonocr .
+```
+Delete the generated `test/widget_test.dart` (it references a `MyApp` class that doesn't exist).
+Then add the permissions below.
+
 ### 1. Platform Permissions Configuration
 
 #### Android (`android/app/src/main/AndroidManifest.xml`)
@@ -75,4 +84,7 @@ flutter run
 flutter run
 ```
 *Note: You can easily configure the backend URL directly inside the app's Settings screen.*
+
+The app has no login screen yet. It identifies itself with `x-user-id: 00000000-0000-0000-0000-000000000001`
+(the seeded `demo` user), which the backend only accepts when its `.env` has `DEV_USER_HEADER_AUTH=true`.
 

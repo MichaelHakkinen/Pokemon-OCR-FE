@@ -533,7 +533,7 @@ class _ScannerScreenState extends State<ScannerScreen> with WidgetsBindingObserv
                                   ),
                                   child: const Icon(
                                     Icons.camera_alt,
-                                    color: Colors.black82,
+                                    color: Colors.black87,
                                     size: 30,
                                   ),
                                 ),
